@@ -1,5 +1,9 @@
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS post;
+DROP TABLE IF EXISTS tickets;
+DROP TABLE IF EXISTS platos;
+DROP TABLE IF EXISTS recetas;
+DROP TABLE IF EXISTS ingredientes;
 
 CREATE TABLE user (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -14,4 +18,40 @@ CREATE TABLE post (
   title TEXT NOT NULL,
   body TEXT NOT NULL,
   FOREIGN KEY (author_id) REFERENCES user (id)
+);
+
+CREATE TABLE tickets (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  plato_id INTEGER NOT NULL, 
+  fecha TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, 
+  lugar TEXT,
+  FOREIGN KEY (plato_id) REFERENCES plato (id)
+);
+
+CREATE TABLE platos (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nombre TEXT NOT NULL,
+  receta_id INTEGER NOT NULL,
+  cantidad INTEGER NOT NULL,
+  costo FLOAT NOT NULL,
+  comentarios TEXT,
+  FOREIGN KEY (receta_id) REFERENCES receta (id)
+);
+
+CREATE TABLE recetas (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nombre TEXT NOT NULL,
+  cook_time TEXT NOT NULL,
+  porciones FLOAT NOT NULL,
+  ingredientes TEXT NOT NULL, 
+  costo FLOAT NOT NULL,
+  preparacion BLOB,
+  imagen TEXT
+);
+
+CREATE TABLE ingredientes (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nombre TEXT NOT NULL,
+  cantidad FLOAT NOT NULL,
+  costo FLOAT NOT NULL
 );
