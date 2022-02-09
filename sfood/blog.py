@@ -6,9 +6,9 @@ from werkzeug.exceptions import abort
 from sfood.auth import login_required
 from sfood.db import get_db
 
-bp = Blueprint('blog', __name__)
+bp = Blueprint('blog', __name__, url_prefix='/blog')
 
-@bp.route('/')
+@bp.route('/inicio')
 def index():
     db = get_db()
     posts = db.execute(
