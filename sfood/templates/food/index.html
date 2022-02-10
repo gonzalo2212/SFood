@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Foods{% endblock %}</h1>
+<h1>{% block title %}Foods{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
-<h1>Foods</h1>
-<div class="card" style="width: 18rem;">
+<div id="comidas">
+  <h1>Foods</h1>
+  <div id="comida-anterior" class="card" style="width: 18rem;">
     <div class="card-header">
-        Martes
+      Lunes
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
@@ -16,17 +17,66 @@
             <img src="{{ url_for('static', filename='arroz-pollo.jpg') }}" class="card-img-top" alt="Arroz con pollo" title="Arroz con pollo">
             <div class="card-body">
               <p class="card-text">Arroz con pollo</p>
-            </div>
           </div>
-        </li>
+        </div>
+      </li>
       <li class="list-group-item">
         <div class="card">
-            <img src="{{ url_for('static', filename='mate-cocido.jpg') }}" class="card-img-top" alt="Arroz con pollo">
-            <div class="card-body">
-              <p class="card-text">Mate cocido</p>
-            </div>
+          <img src="{{ url_for('static', filename='mate-cocido.jpg') }}" class="card-img-top" alt="Mate cocido">
+          <div class="card-body">
+            <p class="card-text">Mate cocido</p>
           </div>
-        </li>
+        </div>
+      </li>
     </ul>
   </div>
+
+  <div id="comida-actual" class="card" style="width: 18rem;">
+    <div class="card-header">
+      Martes
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="card">
+          <img src="{{ url_for('static', filename='fideos.jpg') }}" class="card-img-top" alt="Fideos con tuco">
+          <div class="card-body">
+            <p class="card-text">Fideos con tuco</p>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="card">
+          <img src="{{ url_for('static', filename='omelete.jpg') }}" class="card-img-top" alt="Omelete">
+          <div class="card-body">
+            <p class="card-text">Omelete</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div id="comida-posterior" class="card" style="width: 18rem;">
+    <div class="card-header">
+      Miercoles
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="card">
+          <img src="{{ url_for('static', filename='supremas.jpg') }}" class="card-img-top" alt="Milanesas de pollo">
+          <div class="card-body">
+            <p class="card-text">Milanesas de pollo</p>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="card">
+          <img src="{{ url_for('static', filename='fiambresito.jpg') }}" class="card-img-top" alt="Sandwich de fiambre">
+          <div class="card-body">
+            <p class="card-text">Fiambresito</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
 {% endblock %}

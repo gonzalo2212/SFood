@@ -24,3 +24,37 @@ nav ul li a, nav ul li span, header .action { display: block; padding: 0.5rem; }
 .content textarea { min-height: 12em; resize: vertical; }
 input.danger { color: #cc2f2e; }
 input[type=submit] { align-self: start; min-width: 10em; }
+
+
+#comidas {
+    display: flex;
+    flex-direction: row;
+} 
+
+#comida-anterior {
+    background-color: aquamarine;
+    display: flex;
+}
+
+#comida-actual{
+    background-color: aquamarine;
+    display: flex;
+    width: 200%;
+    height: 200%;
+}
+
+#comida-posterior {
+    background-color: aquamarine;
+    display: flex;
+}
+
+
+/* #almuerzo {
+    display: flex;
+    justify-content: center;
+}
+
+#cena {
+    display: flex;
+    justify-content: flex-end;
+} */
