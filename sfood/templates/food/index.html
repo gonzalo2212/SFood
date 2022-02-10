@@ -6,13 +6,27 @@
 
 {% block content %}
 <h1>Foods</h1>
-<div>
-    <h2>Martes</h2>
-    <div>
-        Comida
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+        Martes
     </div>
-    <div>
-        Otra Comida
-    </div>
-</div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="card">
+            <img src="{{ url_for('static', filename='arroz-pollo.jpg') }}" class="card-img-top" alt="Arroz con pollo">
+            <div class="card-body">
+              <p class="card-text">Arroz con pollo</p>
+            </div>
+          </div>
+        </li>
+      <li class="list-group-item">
+        <div class="card">
+            <img src="{{ url_for('static', filename='mate-cocido.jpg') }}" class="card-img-top" alt="Arroz con pollo">
+            <div class="card-body">
+              <p class="card-text">Mate cocido</p>
+            </div>
+          </div>
+        </li>
+    </ul>
+  </div>
 {% endblock %}
